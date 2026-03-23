@@ -1,0 +1,510 @@
+@font-face {
+    font-family: 'Creato-Regular';
+    src: url('fonts/Creato-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Creato-Black';
+    src: url('fonts/CreatoDisplay-ExtraBold.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Creato-Italic';
+    src: url('fonts/CreatoDisplay-RegularItalic.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Creato-Light';
+    src: url('fonts/CreatoDisplay-Light.otf') format('truetype');
+}
+body {
+    opacity: 0;
+  transition: opacity 0.6s ease;
+  overflow-x: hidden;
+}
+
+body.loaded {
+  opacity: 1;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #e9e9e9;
+  font-family: 'Creato-Regular', sans-serif;
+}
+  .header {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+.hero {
+  min-height: 70vh;
+  background: #e9e9e9;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hero-namebar {
+  background: #1c45f5;
+  padding: 8px 10px 6px 10px;
+}
+
+.hero-content {
+  padding: 10px 14px 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hero-fastbio {
+  font-size: 30px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.highlight {
+  font-weight: 900;
+}
+
+.hero-role {
+  font-size: 30px;
+  line-height: 0.9;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #000;
+  margin-top: 200px;
+}
+
+.hero-footer {
+  padding: 0 14px 10px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.hero-footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hero-tag {
+  font-size: 14px;
+  font-style: italic;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.hero-location {
+  font-size: 20px;
+  font-style: italic;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.hero-copy {
+  font-size: 15px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.fade-item {
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+
+.fade-item.show {
+  opacity: 1;
+}
+
+.biotext {
+  background-color: #1c45f5;
+  min-height: 100vh;
+  padding: 30px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.bio-column {
+  flex: 1;
+  min-width: 0;
+}
+
+.bio {
+  font-family: 'Creato-Regular', sans-serif;
+  font-size: 42px;
+  line-height: 1.05;
+  color: #fff;
+  max-width: 600px;
+  text-align: justify;
+}
+
+.skills-column {
+  margin-left: auto;
+  text-align: right;
+  padding-top: 400px;
+  padding-right: 300px;
+}
+
+.skills-title {
+  font-family: 'Creato-Italic', sans-serif;
+  font-size: 30px;
+  color: #fff;
+  margin-bottom: 16px;
+  font-weight: bold;
+}
+
+.skills-list {
+  list-style: none;
+}
+
+.skill-item {
+  font-family: 'Creato-Regular', sans-serif;
+  font-size: 30px;
+  line-height: 1.1;
+  color: #fff;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.skill-item.show {
+  opacity: 1;
+}
+
+.footerbio {
+  font-family: 'Creato-Regular', sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+  position: absolute;
+  right: 30px;
+  bottom: 20px;
+  font-size: 14px;
+}
+
+.projectbg {
+  background-color: #000000;
+  min-height: 100px;
+}
+
+.project{
+  font-family: 'Creato-Regular', sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+  position: absolute;
+  right: 30px;
+  bottom: 20px;
+  font-size: 14px;
+}
+
+.projects-bar {
+  background: #000;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.projects-title {
+  font-family: 'Creato-Black', sans-serif;
+  font-size: 24px;
+  color: #1c45f5;
+  text-transform: uppercase;
+}
+
+.portfolio {
+  background: #1c45f5;
+  min-height: 100vh;
+  padding: 26px 22px 30px 22px;
+  position: relative;
+}
+
+.portfolio-list {
+  max-width: calc(100% - 220px);
+}
+
+.portfolio-item {
+  position: relative;
+  width: fit-content;
+  font-family: 'Creato-Black', sans-serif;
+  font-size: 58px;
+  line-height: 0.95;
+  text-transform: uppercase;
+  color: #000;
+  margin-bottom: 34px;
+  cursor: pointer;
+  max-width: 100%;
+  word-break: break-word;
+   display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease, transform 0.3s ease, opacity 0.6s ease;
+}
+
+.portfolio-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 4px;
+  background: #fff;
+  transition: width 0.3s ease;
+}
+
+.portfolio-item:hover {
+  color: #fff;
+  transform: translateX(6px);
+}
+
+.portfolio-item:hover::after {
+  width: 100%;
+}
+
+.reveal-item {
+  opacity: 0;
+}
+
+.reveal-item.visible {
+  opacity: 1;
+}
+
+.project-preview {
+  position: absolute;
+  top: 130px;
+  right: 22px;
+  width: 180px;
+}
+
+.project-preview-text {
+  font-family: 'Creato-Regular', sans-serif;
+  font-size: 30px;
+  line-height: 1.15;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.project-preview-text.show {
+  opacity: 1;
+}
+
+.portfolio-footer {
+  margin-top: 90px;
+  background: #000;
+  color: #fff;
+  min-height: 108px;
+  padding: 16px 14px 14px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.portfolio-footer-left {
+  display: flex;
+  gap: 34px;
+  align-items: flex-start;
+}
+
+.footer-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.footer-label,
+.footer-value,
+.portfolio-footer-right p {
+  font-family: 'Creato-Regular', sans-serif;
+  font-size: 10px;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.portfolio-footer-right {
+  text-align: right;
+}
+
+.page-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #1c45f5; /* sua cor azul */
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 9999;
+}
+
+/* ativa */
+.page-transition.active {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding-bottom: 20px;
+    justify-content: flex-start;
+    gap: 28px;
+  }
+
+  .hero-content {
+    padding: 12px 14px 0 14px;
+    gap: 16px;
+  }
+
+  .hero-fastbio {
+    font-size: 12px;
+    line-height: 1.15;
+  }
+
+  .hero-role {
+    font-size: 20px;
+    line-height: 0.9;
+    margin-top: 24px;
+  }
+
+  .hero-footer {
+    padding: 0 14px 14px 14px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .hero-footer-left {
+    gap: 6px;
+  }
+
+  .hero-tag {
+    font-size: 10px;
+  }
+
+  .hero-copy {
+    font-size: 10px;
+  }
+
+  .hero-location {
+    font-size: 12px;
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 768px) {
+  .biotext {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 28px;
+    padding: 20px;
+  }
+
+  .bio-column {
+    width: 100%;
+  }
+
+  .bio {
+    font-size: 18px;
+    line-height: 1.2;
+    max-width: 100%;
+  }
+
+  .skills-column {
+    margin-left: 0;
+    padding-top: 0;
+    text-align: left;
+    width: 100%;
+  }
+
+  .skills-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .skills-list {
+    width: 100%;
+  }
+
+  .skill-item {
+    font-size: 16px;
+    line-height: 1.1;
+  }
+
+  .footerbio {
+    position: static;
+    margin-top: 20px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio {
+    padding: 20px;
+  }
+
+  .portfolio-item {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .project-preview {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .portfolio-footer-right {
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-fastbio {
+    font-size: 12px;
+  }
+
+  .hero-role {
+    font-size: 18px;
+  }
+
+  .bio {
+    font-size: 18px;
+  }
+
+  .portfolio-item {
+    font-size: 22px;
+  }
+
+  .skills-title {
+    font-size: 18px;
+  }
+
+  .skill-item {
+    font-size: 16px;
+  }
+}
